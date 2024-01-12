@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corty</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta content="Corty: Cortar Url" property="og:title" />
+    <meta content="Corty es una web que sirve para recortar tus URL" property="og:description" />
+    <meta content="https://cdn.icon-icons.com/icons2/547/PNG/512/1455554314_line-15_icon-icons.com_53330.png" property="og:image" />
+    <meta content="GREEN" data-react-helmet="true" name="theme-color"/>
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/547/PNG/512/1455554314_line-15_icon-icons.com_53330.png"      
+    sizes="32x32" type="image/png">
+
+  </head>
+  <body>
+    <header>
+      <div class="logo">Corty</div>
+      <input type="checkbox" id="nav_check" hidden />
+      <nav>
+        <ul>
+          <li>
+            <a href="" class="active">Inicio</a>
+          </li>
+          <li>
+            <a href="https://www.geogz.xyz/" target="_blank">Portfolio</a>
+          </li>
+          <li>
+            <a href="https://wa.me/51970201663?text=Yo%20te%20doy%20chamba">Contacto</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/geogz.dev/" target="_blank">Redes</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Free</a>
+          </li>
+        </ul>
+      </nav>
+      <label for="nav_check" class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
+    </header>
+    <div class="container">
+      <h1>
+        Simplifica para
+        <span style="color: #7f8ff4; font-weight: 800">ganar</span> espacio
+      </h1>
+      <h2 style="text-align: center">
+        "Simplifica tu presencia en línea con Corty: crea enlaces cortos<br
+          class="show-for-large"
+        />¡Todo lo que necesitas en una plataforma intuitiva y eficiente!"
+        <strong>Corty Web</strong>.
+      </h2>
+      <br><br>
+      <div class="nosequenombreponeramiclase">
+        <form
+          action="/"
+          method="POST"
+          enctype="application/x-www-form-urlencoded"
+        >
+          <input
+            class="form-nosep"
+            type="text"
+            id="linkoriginal"
+            name="linkoriginal"
+            <% if (link) { %>
+              value="http://localhost:3000/<%= link.urlcortada %>"
+            <% } else { %>
+              value="no hay nada"
+            <% } %>
+            required=""
+          />
+          <button type="button" onclick="openModal()"  class="btn btn--pe btn--insano uppercase">
+            <i style="font-size: 30px;" class='bx bx-copy-alt'></i>
+          </button>
+        </form>
+        <br>
+        <h3 style="text-align: center; color: #5bc490; font-weight: 500;">¡Perfecto tu Url se genero correctamente! <a style="text-decoration:underline; color: rgb(243, 96, 77);" href="/">Generar Nueva Url</a></h3>
+      </div>
+    </div>
+    <!-- El modal -->
+    <div id="myModal">
+      <div id="myModal-content">
+        <span id="closeBtn" onclick="closeModal()">&times;</span>
+        <p>Texto copiado al portapapeles: <span id="copiedText"></span></p>
+      </div>
+    </div>
+
+    <script>
+      function openModal() {
+        var inputField = document.getElementById("linkoriginal");
+        var modal = document.getElementById("myModal");
+        var copiedText = document.getElementById("copiedText");
+
+        /* Selecciona el texto en el campo de entrada */
+        inputField.select();
+        inputField.setSelectionRange(0, 99999); /* Para dispositivos móviles */
+
+        /* Copia el texto al portapapeles */
+        document.execCommand("copy");
+
+        /* Muestra el modal y actualiza el texto copiado */
+        modal.style.display = "block";
+        copiedText.innerHTML = inputField.value;
+      }
+
+      function closeModal() {
+        var modal = document.getElementById("myModal");
+
+        /* Oculta el modal */
+        modal.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
+
+
+
