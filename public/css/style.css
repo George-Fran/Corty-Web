@@ -292,6 +292,14 @@ a:hover {
     color: #7f8ff4;
   }
 
+  @media (max-width: 405px) {
+    .container h1 {
+      font-weight: 800;
+      font-size: 55px;
+      text-align: center;
+    }
+  }
+
   @media (max-width: 350px) {
     .container h1 {
       font-weight: 800;
