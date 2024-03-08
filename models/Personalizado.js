@@ -3,7 +3,7 @@ const shortid = require('shortid');
 
 const linkSchema = new Schema({
     linkoriginal: { type: String },
-    urlcortada: { type: String, default: shortid.generate }
+    urlcortada: { type: String, default: () => shortid.generate().substring(0, 4) }
 });
 
 module.exports = model('Links', linkSchema);
